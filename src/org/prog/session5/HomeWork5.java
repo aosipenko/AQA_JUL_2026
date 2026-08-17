@@ -27,7 +27,7 @@ class Plane {
         } else if(ticketsSold==50){
             System.out.println("Всё ОК, мы под завязку");
         } else{
-            System.out.println("Всё ОК, у нас ещё "+ (maxSeats-ticketsSold) +" свободных мест");
+            System.out.println("Посадили "+ ticketsSold+ " человек, осталось "+ (maxSeats-ticketsSold) +" свободных мест");
         }
     }
 
