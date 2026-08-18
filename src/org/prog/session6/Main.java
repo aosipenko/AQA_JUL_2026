@@ -28,6 +28,7 @@ public class Main {
 
         car1.color = "white";
 
+        System.out.flush();
         System.out.println("Car 1 before paint: " + car1.color);
         carService.paintCar(car1, "yellow");
         System.out.println("Car 1 after paint: " + car1.color);

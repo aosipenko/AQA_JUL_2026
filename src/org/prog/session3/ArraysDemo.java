@@ -9,6 +9,7 @@ public class ArraysDemo {
 
     public static void main(String[] args) {
         Random random = new Random();
+
         int[] arr1 = new int[100];
 
         for (int i = 0; i < arr1.length; i++) {
