@@ -40,5 +40,12 @@ public class Main {
         System.out.println(apple2);
         System.out.println(apple3);
 
+        System.out.println(android1.equals(android2));
+        System.out.println(android2.equals(android3));
+        System.out.println(android3.equals(apple1));
+
+        System.out.println(apple1.equals(apple2));
+        System.out.println(apple2.equals(apple3));
+        System.out.println(apple3.equals(android1));
     }
 }
