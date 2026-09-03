@@ -23,4 +23,9 @@ public class Apple implements IPhone{
         }
         return false;
     }
+
+    @Override
+    public int hashCode() {
+        return this.color.hashCode();
+    }
 }
