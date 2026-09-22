@@ -17,7 +17,10 @@ public class Android implements IPhone {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Android) {
+        if(color==null){
+            throw new PhoneException();
+        }
+        else if(obj instanceof Android) {
             Android a = (Android) obj;
             boolean isEqual = this.color.equals(a.color);
             return isEqual;
@@ -27,6 +30,9 @@ public class Android implements IPhone {
 
     @Override
     public int hashCode() {
+        if(color==null){
+            throw new PhoneException();
+        }
         return this.color.hashCode();
     }
 }
