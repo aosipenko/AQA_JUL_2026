@@ -1,4 +1,5 @@
 # docker-compose.yaml
+# initial pwd /var/jenkins_home/secrets/initialAdminPassword
 version: '3.8'
 services:
   jenkins:
