@@ -2,6 +2,9 @@
 #  - load allo.ua
 #  - search for something (phone, etc)
 #  - phone/etc name must be passed from cucumber scenario
+#  - Add step: check if X goods name is in database
+#  - For each goods that is NOT in DB - store its name and price
+#  - For each goods which name IS in DB - check if price did not change. If price changed - update it in DB.
 
 Feature: My demo
 
