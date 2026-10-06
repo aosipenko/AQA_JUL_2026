@@ -4,10 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.prog.session16.page.GooglePage;
 import org.prog.session20.steps.DBSteps;
 import org.prog.session20.steps.DataHolder;
@@ -18,14 +15,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import java.net.URL;
-import java.sql.DriverManager;
-
 @CucumberOptions(
         glue = "org.prog.session20.steps",
         features = "src/test/resources/features",
         plugin = {
-                "pretty", "html:target/report.html", "json:target/Cucumber.json"
+                "pretty", "html:target/report.html", "json:target/Cucumber.json",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         }
 )
 public class CucumberRunner extends AbstractTestNGCucumberTests {
