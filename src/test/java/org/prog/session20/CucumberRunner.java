@@ -6,6 +6,8 @@ import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.prog.session16.page.GooglePage;
 import org.prog.session20.steps.DBSteps;
 import org.prog.session20.steps.DataHolder;
@@ -14,6 +16,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import java.net.URL;
 import java.sql.DriverManager;
 
 @CucumberOptions(
@@ -37,7 +40,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
         options.addArguments("--disable-notifications");
         options.addArguments("start-maximized");
 
-        driver = new ChromeDriver(options);
+        RemoteWebDriver driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/"), options);
         WebSteps.googlePage = new GooglePage(driver);
     }
 
