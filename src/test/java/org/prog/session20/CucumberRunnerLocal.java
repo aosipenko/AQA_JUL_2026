@@ -6,14 +6,11 @@ import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.prog.session16.page.GooglePage;
 import org.prog.session20.steps.DBSteps;
 import org.prog.session20.steps.DataHolder;
 import org.prog.session20.steps.WebSteps;
-import org.prog.session20.util.DBConnectionFactory;
-import org.prog.session20.util.WebDriverFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -26,20 +23,23 @@ import java.sql.DriverManager;
         features = "src/test/resources/features",
         plugin = {"pretty", "html:target/report.html"}
 )
-public class CucumberRunner extends AbstractTestNGCucumberTests {
+public class CucumberRunnerLocal extends AbstractTestNGCucumberTests {
 
     private WebDriver driver;
 
     @SneakyThrows
     @BeforeSuite
     public void connectToDB() {
-        DBSteps.connection = DBConnectionFactory.getConnection();
+        DBSteps.connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/db",
+                "root",
+                "password");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         options.addArguments("start-maximized");
 
-        driver = WebDriverFactory.getDriver();
+        driver = new ChromeDriver(options);
         WebSteps.googlePage = new GooglePage(driver);
     }
 
