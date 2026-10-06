@@ -24,7 +24,9 @@ import java.sql.DriverManager;
 @CucumberOptions(
         glue = "org.prog.session20.steps",
         features = "src/test/resources/features",
-        plugin = {"pretty", "html:target/report.html"}
+        plugin = {
+                "pretty", "html:target/report.html", "json:target/Cucumber.json"
+        }
 )
 public class CucumberRunner extends AbstractTestNGCucumberTests {
 
