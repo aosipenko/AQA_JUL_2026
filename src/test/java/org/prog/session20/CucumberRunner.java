@@ -20,7 +20,7 @@ import java.net.URL;
 import java.sql.DriverManager;
 
 @CucumberOptions(
-        glue = "org.prog.session19.steps",
+        glue = "org.prog.session20.steps",
         features = "src/test/resources/features",
         plugin = {"pretty", "html:target/report.html"}
 )
