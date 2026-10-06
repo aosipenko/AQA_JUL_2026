@@ -40,7 +40,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
         options.addArguments("--disable-notifications");
         options.addArguments("start-maximized");
 
-        RemoteWebDriver driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/"), options);
+        driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/"), options);
         WebSteps.googlePage = new GooglePage(driver);
     }
 
