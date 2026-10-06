@@ -60,17 +60,22 @@ Feature: My demo
   Scenario: test that fails at random 7
     Given Random failure
 
+  @severity=blocker
   Scenario: test that fails at random 8
     Given Random failure
 
+  @severity=trivial
   Scenario: test that fails at random 9
     Given Random failure
 
+  @severity=trivial
   Scenario: test that fails at random 10
     Given Random failure
 
+  @severity=critical
   Scenario: test that fails at random 11
     Given Random failure
 
+  @severity=critical
   Scenario: test that fails at random 12
     Given Random failure
