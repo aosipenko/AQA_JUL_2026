@@ -4,8 +4,10 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import org.prog.session17.dto.NameDto;
 import org.prog.session17.dto.PersonDto;
+import org.testng.Assert;
 
 import java.util.List;
+import java.util.Random;
 
 public class TestDataSteps {
 
@@ -41,5 +43,12 @@ public class TestDataSteps {
         personDto.setGender(dataTable.asMap().get("Gender"));
 
         DataHolder.data.put(alias, personDto);
+    }
+
+    @Given("Random failure")
+    public void randomFailure() {
+        Random random = new Random();
+        int i = random.nextInt(100);
+        Assert.assertTrue(i > 20, "i was less than 20");
     }
 }

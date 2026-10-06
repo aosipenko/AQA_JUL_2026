@@ -38,3 +38,39 @@ Feature: My demo
     Given I load google page
     When I set google page search to "customer_1" first and last name
     Then Google has "customer_1" first and last name in search input
+
+  Scenario: test that fails at random 1
+    Given Random failure
+
+  Scenario: test that fails at random 2
+    Given Random failure
+
+  Scenario: test that fails at random 3
+    Given Random failure
+
+  Scenario: test that fails at random 4
+    Given Random failure
+
+  Scenario: test that fails at random 5
+    Given Random failure
+
+  Scenario: test that fails at random 6
+    Given Random failure
+
+  Scenario: test that fails at random 7
+    Given Random failure
+
+  Scenario: test that fails at random 8
+    Given Random failure
+
+  Scenario: test that fails at random 9
+    Given Random failure
+
+  Scenario: test that fails at random 10
+    Given Random failure
+
+  Scenario: test that fails at random 11
+    Given Random failure
+
+  Scenario: test that fails at random 12
+    Given Random failure
